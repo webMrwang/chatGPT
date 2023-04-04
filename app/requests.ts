@@ -33,7 +33,7 @@ function getHeaders() {
   let headers: Record<string, string> = {};
 
   if (accessStore.enabledAccessControl()) {
-    headers["access-code"] = accessStore.accessCode;
+    headers["access-code"] = "Deep8888"; //accessStore.accessCode
   }
 
   if (accessStore.token && accessStore.token.length > 0) {

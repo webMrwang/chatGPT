@@ -17,7 +17,7 @@ export const useAccessStore = create<AccessControlStore>()(
   persist(
     (set, get) => ({
       token: "",
-      accessCode: "",
+      accessCode: "Deep8888",
       enabledAccessControl() {
         return queryMeta("access") === "enabled";
       },
