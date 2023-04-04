@@ -52,7 +52,8 @@ export function Avatar(props: { role: Message["role"] }) {
   const config = useChatStore((state) => state.config);
 
   if (props.role !== "user") {
-    return <BotIcon className={styles["user-avtar"]} />;
+    // return <BotIcon className={styles["user-avtar"]} />;
+	return <img className="the_img1" src="https://dp-data.obs.cn-south-1.myhuaweicloud.com:443/files%2F6d4c9de070b04c439ecd5fd401f2d54e.png" />
   }
 
   return (
