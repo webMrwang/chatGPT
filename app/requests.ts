@@ -32,9 +32,11 @@ function getHeaders() {
   const accessStore = useAccessStore.getState();
   let headers: Record<string, string> = {};
 
-  if (accessStore.enabledAccessControl()) {
-    headers["access-code"] = "Deep8888"; //accessStore.accessCode
-  }
+  // if (accessStore.enabledAccessControl()) {
+  //   headers["access-code"] = "Deep8888"; //accessStore.accessCode
+  // }
+  
+  headers["access-code"] = "Deep8888";
 
   if (accessStore.token && accessStore.token.length > 0) {
     headers["token"] = accessStore.token;
