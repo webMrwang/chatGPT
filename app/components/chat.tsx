@@ -52,13 +52,18 @@ export function Avatar(props: { role: Message["role"] }) {
   const config = useChatStore((state) => state.config);
 
   if (props.role !== "user") {
-    // return <BotIcon className={styles["user-avtar"]} />;
-	return <img className="the_img1" src="https://dp-data.obs.cn-south-1.myhuaweicloud.com:443/files%2F6d4c9de070b04c439ecd5fd401f2d54e.png" />
+    // return <BotIcon className={styles["user-avtar"]}  <Emoji unified={config.avatar} size={18} /> />;
+    return (
+      <img
+        className="the_img1"
+        src="https://dp-data.obs.cn-south-1.myhuaweicloud.com:443/files%2F6d4c9de070b04c439ecd5fd401f2d54e.png"
+      />
+    );
   }
 
   return (
     <div className={styles["user-avtar"]}>
-      <Emoji unified={config.avatar} size={18} />
+      <img className="the_img1" src="/1f603.png" />
     </div>
   );
 }
@@ -422,10 +427,16 @@ export function Chat(props: {
   const config = useChatStore((state) => state.config);
 
   const context: RenderMessage[] = session.context.slice();
+  Array.prototype.at = function (index) {
+    if (index < 0) {
+      index += this.length;
+    }
+
+    return this[index];
+  };
 
   if (
-    context.length === 0&&
-    session.messages.length &&
+    context.length === 0 &&
     session.messages.at(0)?.content !== BOT_HELLO.content
   ) {
     context.push(BOT_HELLO);
